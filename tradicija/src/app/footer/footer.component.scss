@@ -1,0 +1,14 @@
+@import '../../common/scss/base.scss';
+$footer-padding-top: 20px;
+$footer-padding-bottom: 20px;
+.container-fluid {
+    padding-left: $padding-standard-container;
+    padding-right: $padding-standard-container;
+    padding-top: $footer-padding-top;
+    padding-bottom: $footer-padding-bottom;
+    background: $font-header-color-secondary;
+    color: $font-color-primary;
+    font-size: $font-size-normal;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-regular;
+}

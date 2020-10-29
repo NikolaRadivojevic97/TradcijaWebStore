@@ -1,0 +1,29 @@
+<h3>
+    Zdravo {{ order.getShoppingCart().getCustomer().getFirstName() }}, primili smo vasu narudzbinu.
+</h3>
+
+<p>
+    Detalji porudzbine:
+</p>
+<ul>
+    {%  for product in order.getShoppingCart().getProducts() %}
+    <li>
+        <img src="{{ product.getUrl() }}" style="width:100px; height:100px;">
+        <p>Brend:{{ product.getCar().getModel().getBrand().getName()}}</p>
+        <p>Model:{{ product.getCar().getModel().getName() }}</p>
+        <p>Nivo opreme:{{ product.getCar().getEquipmentLevel() }}</p>
+        <p>Generacija:{{ product.getCar().getGeneration() }}</p>
+        <p>Generacija:{{ product.getCar().getBodyType()}}</p>
+        <p>Kombinacija:{{ product.getCombination().getColor1() }}/{{ product.getCombination().getColor1()  }}</p>
+        <p>Opis:{{ product.getCombination().getDescription() }}</p>
+        <p>Cena:{{ product.getPrice() }}</p>
+    </li>
+    {% endfor%}
+</ul>
+<p>
+    Ukupno:{{ order.getShoppingCart().getTotal() }}
+
+</p>
+<p>
+    Placanje:{{ order.getPaymnet().getMethod() }}
+</p>

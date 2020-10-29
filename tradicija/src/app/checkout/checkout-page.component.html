@@ -1,0 +1,204 @@
+ <app-navbar [isHome]="isHome"></app-navbar>
+ <!--Main layout-->
+  <div class="container wow fadeIn">
+
+    <!-- Heading -->
+    <h2 class="my-5 h2 text-center">Kupovina</h2>
+
+    <!--Grid row-->
+    <div class="row" *ngIf="ready">
+
+      <!--Grid column-->
+      <div class="col-md-8 mb-4">
+
+        <!--Card-->
+        <div class="card">
+
+          <!--Card content-->
+          <form class="card-body" [formGroup]="form" *ngIf="!haveCustomer">
+
+            <!--Grid row-->
+            <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-6 mb-2">
+
+                <!--firstName-->
+                <div class="md-form ">
+                  <label for="firstName" class="">Ime</label>
+                  <input type="text" id="firstName" class="form-control" formControlName="firstName"  placeholder="ime">
+                </div>
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-6 mb-2">
+
+                <!--lastName-->
+                <div class="md-form">
+                  <label for="lastName" class="">Prezime</label>
+                  <input type="text" id="lastName" class="form-control" formControlName="lastName"  placeholder="prezime">
+                </div>
+
+              </div>
+              <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <!--email-->
+            <div class="md-form">
+              <label for="email" class="">Email</label>
+              <input type="text" id="email" class="form-control" placeholder="youremail@example.com" formControlName="email">
+            </div>
+
+            <!--address-->
+            <div class="md-form">
+              <label for="address" class="">Adresa</label>
+              <input type="text" id="address" class="form-control" placeholder="Adresa" formControlName="address">
+            </div>
+
+            <!--address-2-->
+            <div class="md-form">
+              <label for="address-2" class="">Grad</label>
+              <input type="text" class="form-control"  formControlName="city"  placeholder="grad">
+            </div>
+
+
+            <div class="md-form">
+                <label for="zip">Zip Kod</label>
+                <input type="text" class="form-control" id="zip"  formControlName="zipCode"  placeholder="zip kod">
+              </div>
+
+                <div class="md-form">
+                <label for="zip">Broj telefona</label>
+                <input type="text" class="form-control" id="zip"  formControlName="phoneNumber"  placeholder="broj telefona">
+              </div>
+
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" (click)="onInfoAdd()" [disabled]="!form.valid">Nastavi na plaćanje</button>
+            <button *ngIf="registered" class="btn btn-primary btn-lg btn-block" routerLink='/profile'>Izmeni informacije</button>
+
+
+          </form>
+          <article class="card" *ngIf="haveCustomer">
+            <div class="card-body p-5">
+              <a (click)="onBackInfo()" style="color:blue;">Nazad na informacije</a>
+            <ul class="nav bg-light nav-pills rounded nav-fill mb-3" role="tablist">
+              <li class="nav-item" (click)="onCardClick()">
+                <a class="nav-link" data-toggle="pill" >
+                <i class="fa fa-credit-card"></i> Kartica</a></li>
+              <li class="nav-item" (click)="onPouzecemClick()">
+                <a class="nav-link" data-toggle="pill" >
+                <i class="fa fa-automobile"></i>  Pouzecem</a></li>
+              <li class="nav-item" (click)="onBankClick()">
+                <a class="nav-link" data-toggle="pill" >
+                <i class="fa fa-university"></i> Uplatnicom</a></li>
+            </ul>
+
+            <div class="tab-content">
+            <div class="tab-pane fade show active" id="nav-tab-card" *ngIf="card">
+              <!-- <p class="alert alert-success">Some text success or error</p> -->
+              <form class="card-body" [formGroup]="formCard">
+              <div class="form-group">
+                <label for="username">Puno ime (sa kartice)</label>
+                <input type="text" class="form-control" name="username" placeholder="" formControlName="username">
+              </div> <!-- form-group.// -->
+
+              <div class="form-group">
+                <label for="cardNumber">Broj kartice</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="cardNumber" placeholder="" formControlName="cardNumber">
+                  <div class="input-group-append">
+                    <span class="input-group-text text-muted">
+                      <i class="fa fa-credit-card"></i> <i class="fa fa-cc-mastercard"></i>
+                    </span>
+                  </div>
+                </div>
+              </div> <!-- form-group.// -->
+
+              <div class="row">
+                  <div class="col-sm-8">
+                      <div class="form-group">
+                          <label><span class="hidden-xs">Rok</span> </label>
+                        <div class="input-group">
+                          <input type="number" class="form-control" placeholder="MM" formControlName="MM">
+                            <input type="number" class="form-control" placeholder="YY" formControlName="YY">
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+                          <input type="number" class="form-control" formControlName="CVV">
+                      </div> <!-- form-group.// -->
+                  </div>
+              </div> <!-- row.// -->
+              <button class="subscribe btn btn-primary btn-block" type="button" (click)="onCardComfirm()" [disabled]="!formCard.valid"> Potvrdi </button>
+              </form>
+            </div> <!-- tab-pane.// -->
+            <div class="tab-pane fade show active" id="nav-tab-paypal" *ngIf="pouzece">
+            <p>Izaberite placanje pouzecem</p>
+            <p>
+            <button type="button" class="btn btn-primary" (click)="onPouzece()" > Potvrdi</button>
+            </p>
+            <p><strong>Napomena:</strong> U slucaju placanja pouzecem korisnik placa isporuku </p>
+            </div>
+            <div class="tab-pane fade show active" id="nav-tab-bank" *ngIf="bank">
+            <p>Podaci o racunu</p>
+            <dl class="param">
+              <dt>BANKA: </dt>
+              <dd> THE WORLD BANK</dd>
+            </dl>
+            <dl class="param">
+              <dt>Broj racuna: </dt>
+              <dd> 12345678912345</dd>
+            </dl>
+            <dl class="param">
+              <dt>IBAN: </dt>
+              <dd> 123456789</dd>
+            </dl>
+            <button type="button" class="btn btn-primary" (click)="onRacunom()" > Potvrdi</button>
+            </div> <!-- tab-pane.// -->
+            </div> <!-- tab-content .// -->
+
+            </div> <!-- card-body.// -->
+            </article> <!-- card.// -->
+
+        </div>
+        <!--/.Card-->
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-md-4 mb-4">
+
+        <!-- Heading -->
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Vasa korpa</span>
+          <span class="badge badge-secondary badge-pill">{{covers.length}}</span>
+        </h4>
+
+        <!-- Cart -->
+        <!-- <div class="cart-item-thumbnail" [ngStyle]="{'background-image': 'url(' + com.url + ')'}">
+        </div> -->
+        <ul class="list-group mb-3 z-depth-1">
+          <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let cover of covers">
+            <div>
+              <div class="cart-item-thumbnail" [ngStyle]="{'background-image': 'url(' + cover.url + ')'}">
+              </div>
+              <h6 class="my-0">{{cover.car.model.brand.name}}</h6>
+              <small class="text-muted">{{cover.car.model.name}}</small>
+            </div>
+            <span class="text-muted">{{cover.price+" EUR"}}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Ukupno (EUR)</span>
+            <strong>{{total}}</strong>
+          </li>
+        </ul>
+        <button class="btn btn-primary btn-lg btn-block" (click)="confirmOrder()" *ngIf="(haveCustomer || registered) && placanje">Potvrdite narudžbinu</button>
+        <!-- Cart -->

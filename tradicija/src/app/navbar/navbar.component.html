@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+            <li class="nav-item active btn-link">
+              <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome}" routerLink="/home">POČETNA</a>
+            </li>
+            <li class="nav-item btn-link">
+              <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome}" routerLink="/products" onclick="onShop()">PRODAVNICA</a>
+            </li>
+            <li class="nav-item btn-link">
+              <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome}" *ngIf="user==null" routerLink="/auth">ULOGUJ SE</a>
+            </li>
+            <li class="nav-item btn-link">
+              <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome}" *ngIf="user==null" routerLink="/registration">REGISTRUJ SE</a>
+            </li>
+            <li class="nav-item btn-link">
+              <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome}" *ngIf="user!=null" routerLink="/profile">{{user}}</a>
+            </li>
+            <li class="nav-item btn-link">
+              <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome}" *ngIf="admin" routerLink="/orders">NARUDŽBINE</a>
+            </li>
+            <li class="nav-item btn-link">
+              <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome}" *ngIf="admin" routerLink="/combinations">KOMBINACIJE</a>
+            </li>
+            <li class="nav-item btn-link">
+              <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome}" *ngIf="admin" routerLink="/statistics">STATISTIKA</a>
+            </li>
+            <li class="nav-item btn-link">
+              <div class="header-cart-wrapper">
+                <div class="header-cart" (click)="toggleCartPopup($event)">
+                    <!-- <div class="mobil-shopping-cart">
+                        <span><i class="fa fa-shopping-cart fa-2x"></i> <span *ngIf="cart_num">( {{cart_num}} )</span></span>
+                    </div> -->
+                    <div class="header-cart-item">
+                        <a class="nav-link" [ngClass]="{'nav-link1': isHome, 'nav-link2':!isHome }" (onclick)="onShop()" *ngIf="!admin">KORPA <span *ngIf="cart_num">( {{cart_num}} )</span><span class="fa fa-caret-down"></span></a>
+                    </div>
+                </div>
+            </div>
+            </li>
+        </ul>
+  </div>
+  <cart-popup></cart-popup>
+</nav>

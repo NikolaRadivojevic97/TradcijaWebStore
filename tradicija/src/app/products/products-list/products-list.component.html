@@ -1,0 +1,112 @@
+<!-- <div class="row">
+    <div class="col-md-5">
+        <app-recipe-list></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+
+        <router-outlet></router-outlet>
+    </div>
+</div> -->
+
+<app-navbar [isHome]="isHome"></app-navbar>
+<div class="header-image">
+  <div class="header-block">
+      <div class="header-text">
+          <div class="header-text-title">Auto presvlake Tradicija</div>
+          <p>
+            Promenite izgled vaših sedišta
+            <br>
+            Najkvalitetnije presvlake na tržištu
+          </p>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+
+  </div>
+</div>
+<br>
+
+<!-- dodati ovo u row pa column -->
+<!-- <select class='select-option'
+    #mySelect
+    (change)='onOptionsSelected(mySelect.value)'>
+   <option class='option'
+   *ngFor='let option of dropDownData'
+   [value]="option.seo_val">{{option.text_val}}</option>
+</select> -->
+<!-- <select class="uk-width-1-1" id="model" name="model[]" placeholder="Svi modeli" disabled="disabled" multiple="multiple"></select> -->
+<div class="layout-container">
+  <div class="row" *ngIf="admin">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-2">
+      <div class="product-cart-button button button-primary button-large" routerLink="/products/new">Dodaj</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4" >
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input type="text"
+                 placeholder="Brand"
+                 aria-label="Number"
+                 matInput
+                 [formControl]="myControl"
+                 [matAutocomplete]="auto"/>
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"(optionSelected)='onChange($event.option.value)'>
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+  <!-- <select class="form-control" (change)="onChange($event)">
+  <option value="" disabled selected hidden>Brand</option>
+  <option *ngFor="let car of listItems" [value]=car>{{car}}</option>
+  </select> -->
+  </div>
+  <div class="col-sm-4">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text"
+               placeholder="Model"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl1"
+               [matAutocomplete]="auto1" [disabled]="!enabled"/>
+        <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete" (optionSelected)='onChangeModel($event.option.value)'>
+          <mat-option *ngFor="let option of models | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    <!-- <select class="form-control" [(ngModel)]='nrSelect'[disabled]="!enabled" (change)="onChangeModel($event)">
+    <option value="" disabled selected hidden>Marka</option>
+    <option *ngFor="let model of modelItems" [value]=model.name>{{model.name}}</option>
+    </select> -->
+    </div>
+  </div>
+  <div class="product-grid">
+
+    <div class="row">
+      <div class="col-md-4 col-sm-6" *ngFor="let product of loadedProducts;">
+          <div class="image-container">
+              <div class="product-image" [ngStyle]="{'background-image': 'url('+product.url+ ')'}"></div>
+              <div class="overlay">
+                  <div class="button button-primary" [routerLink]="[product.id]">View Details</div>
+                  <!-- <div class="button button-primary" (click)="addToCart(product)">Add To Cart</div> -->
+              </div>
+          </div>
+          <div class="product-details">
+              <div class="product-title">{{product.model.brand.name+" "+product.model.name}}</div>
+              <div class="product-brand">{{product.generation}}</div>
+              <div class="product-brand">{{product.bodyType }}</div>
+              <div class="product-price">{{product.equipmentLevel }}</div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
