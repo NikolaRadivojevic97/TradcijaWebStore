@@ -11,42 +11,37 @@ Motivation for this project is private business of making seats cover for car.
 </p>
 
 # Screenshots
+
 Landing page
 <br>
-<a href="https://ibb.co/RYBtGXN"><img src="https://i.ibb.co/MZGKyzf/1.png" alt="1" border="0"></a>
+<a href="https://ibb.co/9hcmyz0"><img src="https://i.ibb.co/T1YDPpG/2.png" alt="2" border="0"></a>
 
 <br>
-Phones on sale
+Car seats
 <br>
-<a href="https://ibb.co/Jc4gH6D"><img src="https://i.ibb.co/GdLNRYz/2.png" alt="2" border="0"></a>
+<a href="https://ibb.co/VvQStF4"><img src="https://i.ibb.co/xMfjDnT/1.png" alt="1" border="0"></a>
 
 <br>
-Login dropdown
-<br>
-<a href="https://ibb.co/ZM0P4fb"><img src="https://i.ibb.co/87HpvmQ/3.png" alt="3" border="0"></a>
+Cossen car<br>
+<a href="https://ibb.co/3zW536x"><img src="https://i.ibb.co/74VxfM3/4.png" alt="4" border="0"></a>
 
 <br>
-Search phones
-<br>
-<a href="https://ibb.co/jV7hZbZ"><img src="https://i.ibb.co/6v6YJrJ/4.png" alt="4" border="0"></a>
+Preview of chosen combination<br>
+<a href="https://ibb.co/6rBNSGN"><img src="https://i.ibb.co/176bNBb/5.png" alt="5" border="0"></a>
 
 <br>
-Phone specification and choosing package
-<br>
-<a href="https://ibb.co/hVQpXQp"><img src="https://i.ibb.co/L1j4Qj4/5.png" alt="5" border="0"></a>
+Seat cover added to chart<br>
+<a href="https://ibb.co/TvLKwM8"><img src="https://i.ibb.co/bWJH65B/6.png" alt="6" border="0"></a>
 
 <br>
-Shopping cart
+Check out form<br>
+<a href="https://ibb.co/9YbmmTT"><img src="https://i.ibb.co/F75kkww/7.png" alt="7" border="0"></a>
 <br>
-<a href="https://ibb.co/yhNhNCJ"><img src="https://i.ibb.co/f8X8XW7/6.png" alt="6" border="0"></a>
+Payment methods<br>
+<a href="https://ibb.co/bJQnrGg"><img src="https://i.ibb.co/KwbH98j/8.png" alt="8" border="0"></a>
 <br>
-Admin panel
-<br>
-<a href="https://ibb.co/9Vwby6f"><img src="https://i.ibb.co/JyxvrVb/7.png" alt="7" border="0"></a>
-<br>
-All contracts
-<br>
-<a href="https://ibb.co/qB6S58y"><img src="https://i.ibb.co/TcyfLGv/8.png" alt="8" border="0"></a>
+Registration<br>
+<a href="https://ibb.co/ZM3rNg1"><img src="https://i.ibb.co/x7yb3g8/9.png" alt="9" border="0"></a>
 
 <br>
 Graph of phone brands sale
@@ -54,9 +49,27 @@ Graph of phone brands sale
 <a href="https://ibb.co/zFhZSCq"><img src="https://i.ibb.co/1MfT9BF/9.png" alt="9" border="0"></a>
 
 <br>
-Shop location
+Orders overview<br>
+<a href="https://ibb.co/h12Zbxj"><img src="https://i.ibb.co/k6q9jVf/10.png" alt="10" border="0"></a>
+
 <br>
-<a href="https://ibb.co/VmGGkgt"><img src="https://i.ibb.co/NSqqG9s/10.png" alt="10" border="0"></a>
+Orders overview(Admin)<br>
+<a href="https://ibb.co/tPSLcdZ"><img src="https://i.ibb.co/G3XHkhs/11.png" alt="11" border="0"></a>
+<a href="https://ibb.co/YN7HC93"><img src="https://i.ibb.co/D1D0JXt/12.png" alt="12" border="0"></a>
+
+<br>
+Combinations<br>
+<a href="https://ibb.co/WHzdLbT"><img src="https://i.ibb.co/Cw9Xfkr/13.png" alt="13" border="0"></a>
+
+<br>
+Adding new car/covers<br>
+<a href="https://ibb.co/tPKw1L8"><img src="https://i.ibb.co/x8LKrFJ/14.png" alt="14" border="0"></a>
+<a href="https://ibb.co/rbr7r4F"><img src="https://i.ibb.co/VH4j42J/15.png" alt="15" border="0"></a>
+
+<br>
+Statistics<br>
+<a href="https://ibb.co/44Cg0jK"><img src="https://i.ibb.co/WB7pRcG/16.png" alt="16" border="0"></a>
+
 <br>
 
 ## Used tehnologies
